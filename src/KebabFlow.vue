@@ -7,16 +7,10 @@ const {
   user,
   nameInput,
   startTime,
-  endTime,
   elapsedTime,
   finalDuration,
   isFinished,
   isLoading,
-  showAdmin,
-  toggleAdmin,
-  allRecords,
-  isFetchingData,
-  calculateDuration,
   login,
   markStart,
   markEnd,
@@ -151,50 +145,5 @@ const {
       </div>
 
     </main>
-
-    <!-- ADMIN -->
-    <footer class="p-4 bg-gray-50 border-t border-gray-200">
-      <div v-if="!showAdmin" class="flex justify-center">
-        <button
-          @click="toggleAdmin"
-          class="text-xs text-gray-400 hover:text-green-600 transition-colors flex items-center gap-1"
-        >
-          <span>📋</span> Pokaż dane grupy (z Arkusza)
-        </button>
-      </div>
-
-      <div v-else class="space-y-3 animate-slide-up">
-        <div class="flex justify-between items-center mb-2">
-          <h3 class="font-bold text-gray-700 text-sm">Dane z Arkusza Google</h3>
-          <button @click="showAdmin = false" class="text-gray-400 hover:text-red-500 text-xl">&times;</button>
-        </div>
-
-        <div class="bg-white p-2 rounded border text-xs h-32 overflow-y-auto font-mono relative">
-          <div v-if="isFetchingData" class="absolute inset-0 bg-white/80 flex items-center justify-center text-green-600">
-            Ładowanie...
-          </div>
-
-          <div v-if="allRecords.length === 0 && !isFetchingData" class="text-gray-400 text-center py-4">
-            Brak danych...
-          </div>
-
-          <div
-            v-for="(rec, index) in allRecords"
-            :key="index"
-            class="border-b last:border-0 py-1 flex justify-between items-center"
-          >
-            <span class="font-semibold">{{ rec.name }}</span>
-
-            <span v-if="rec.endTime" class="text-green-600 bg-green-50 px-1 rounded">
-              Gotowe ({{ calculateDuration(rec.startTime, rec.endTime) }})
-            </span>
-            <span v-else-if="rec.startTime" class="text-orange-500 animate-pulse">WIP...</span>
-            <span v-else class="text-gray-300">Czeka</span>
-          </div>
-        </div>
-
-        <div class="text-[10px] text-center text-gray-400">Odświeża się przy otwarciu panelu.</div>
-      </div>
-    </footer>
   </div>
 </template>

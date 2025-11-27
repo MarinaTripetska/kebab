@@ -5,11 +5,8 @@ export function useKebabFlow(GOOGLE_SCRIPT_URL) {
   const nameInput = ref("");
   const startTime = ref(null);
   const endTime = ref(null);
-  const showAdmin = ref(false);
   const now = ref(Date.now());
   const isLoading = ref(false);
-  const isFetchingData = ref(false);
-  const allRecords = ref([]);
 
   let timerInterval = null;
 
@@ -62,21 +59,6 @@ export function useKebabFlow(GOOGLE_SCRIPT_URL) {
     }
   };
 
-  const fetchSheetData = async () => {
-    if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes("TU_WKLEJ")) return;
-    isFetchingData.value = true;
-
-    try {
-      const res = await fetch(GOOGLE_SCRIPT_URL);
-      const data = await res.json();
-      allRecords.value = data;
-    } catch (e) {
-      console.error("Błąd pobierania", e);
-    } finally {
-      isFetchingData.value = false;
-    }
-  };
-
   // --- Local storage ---
   const saveLocal = () => {
     const data = {
@@ -114,11 +96,6 @@ export function useKebabFlow(GOOGLE_SCRIPT_URL) {
     });
   };
 
-  const toggleAdmin = () => {
-    showAdmin.value = !showAdmin.value;
-    if (showAdmin.value) fetchSheetData();
-  };
-
   const resetApp = () => {
     if (confirm("Czy na pewno?")) {
       localStorage.removeItem("kebab_user_sheet");
@@ -150,11 +127,6 @@ export function useKebabFlow(GOOGLE_SCRIPT_URL) {
     finalDuration,
     isFinished,
     isLoading,
-    showAdmin,
-    toggleAdmin,
-    allRecords,
-    isFetchingData,
-    calculateDuration,
     login,
     markStart,
     markEnd,
