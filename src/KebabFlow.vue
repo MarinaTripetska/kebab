@@ -103,6 +103,10 @@ const {
             <span class="text-2xl font-bold uppercase tracking-widest">Zamawiam</span>
             <span class="text-xs opacity-75">Kliknij przy kasie</span>
           </button>
+
+          <button @click="resetApp" class="text-blue-400 text-sm underline mt-4">
+            Zresetuj (Nowy pomiar)
+          </button>
         </div>
 
         <!-- WIP -->
@@ -121,8 +125,11 @@ const {
             <span class="text-2xl font-bold uppercase tracking-widest">Odbieram</span>
             <span class="text-xs opacity-75">Kliknij gdy dostaniesz jedzenie</span>
           </button>
-        </div>
 
+          <button @click="resetApp" class="text-blue-400 text-sm underline mt-4">
+            Zresetuj (Nowy pomiar)
+          </button>
+        </div>
       </div>
 
       <!-- EKRAN 3: Finish -->
