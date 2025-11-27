@@ -1,7 +1,7 @@
 <script setup>
 import { useKebabFlow } from "./useKebabFlow.js";
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwp98gcW9Qinu-LGu6mvHdulyw-r-u122JsbmNfCGacEGY2qbXVfsfT4d3VUKXEsCQW/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxj60IiCF33iG9zP33ItPkoFzwvC1sS7OTby8ciGqyc7SFkIrEGAkAogBxz6u_VtFSi/exec";
 
 const {
   user,
