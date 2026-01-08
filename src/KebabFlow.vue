@@ -60,7 +60,7 @@ const {
       <div v-if="!user" class="flex-1 flex flex-col justify-center items-center space-y-8 fade-in">
         <div class="text-center space-y-2">
           <h1 class="text-3xl font-bold text-gray-800">Ćwiczenie terenowe</h1>
-          <p class="text-gray-500">Wpisz imię, aby rozpocząć.</p>
+          <p class="text-gray-500">Aby rozpocząć wpisz nazwisko - żeby nie było duplikatów.</p>
         </div>
 
         <div class="w-full space-y-4">
@@ -68,7 +68,7 @@ const {
             v-model="nameInput"
             @keyup.enter="login"
             type="text"
-            placeholder="Twoje Imię"
+            placeholder="Twoje nazwisko"
             class="w-full text-center text-xl p-4 border-2 border-gray-300 rounded-xl focus:border-green-500 focus:outline-none transition-colors"
           >
           <button
