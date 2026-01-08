@@ -40,7 +40,7 @@ const {
     <!-- Pasek górny -->
     <header class="bg-green-700 text-white p-4 flex justify-between items-center z-10 shadow-md">
       <div class="font-bold text-lg tracking-wider flex items-center gap-2">
-        <span>📊</span> Ćwiczenie terenowe
+        <span>📊</span> Flow w IT
       </div>
       <div v-if="user" class="text-xs bg-green-800 px-2 py-1 rounded text-green-100 border border-green-600">
         {{ user.name }}
@@ -59,7 +59,7 @@ const {
       <!-- EKRAN 1: Logowanie -->
       <div v-if="!user" class="flex-1 flex flex-col justify-center items-center space-y-8 fade-in">
         <div class="text-center space-y-2">
-          <h1 class="text-3xl font-bold text-gray-800">Warsztaty TOC</h1>
+          <h1 class="text-3xl font-bold text-gray-800">Ćwiczenie terenowe</h1>
           <p class="text-gray-500">Wpisz imię, aby rozpocząć.</p>
         </div>
 
