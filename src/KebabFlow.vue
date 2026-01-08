@@ -40,7 +40,7 @@ const {
     <!-- Pasek górny -->
     <header class="bg-green-700 text-white p-4 flex justify-between items-center z-10 shadow-md">
       <div class="font-bold text-lg tracking-wider flex items-center gap-2">
-        <span>📊</span> KebabFlow
+        <span>📊</span> Ćwiczenie terenowe
       </div>
       <div v-if="user" class="text-xs bg-green-800 px-2 py-1 rounded text-green-100 border border-green-600">
         {{ user.name }}
@@ -60,7 +60,7 @@ const {
       <div v-if="!user" class="flex-1 flex flex-col justify-center items-center space-y-8 fade-in">
         <div class="text-center space-y-2">
           <h1 class="text-3xl font-bold text-gray-800">Warsztaty TOC</h1>
-          <p class="text-gray-500">Wpisz imię, aby rozpocząć pomiar.</p>
+          <p class="text-gray-500">Wpisz imię, aby rozpocząć.</p>
         </div>
 
         <div class="w-full space-y-4">
@@ -100,8 +100,8 @@ const {
             class="w-full aspect-square max-h-80 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl flex flex-col items-center justify-center space-y-2 active:scale-95 transition-all mx-auto"
           >
             <span class="text-6xl">📝</span>
-            <span class="text-2xl font-bold uppercase tracking-widest">Zamawiam</span>
-            <span class="text-xs opacity-75">Kliknij przy kasie</span>
+            <span class="text-2xl font-bold uppercase tracking-widest">Zamówione!</span>
+            <span class="text-xs opacity-75">Kliknij gdy już zamówisz</span>
           </button>
 
           <button @click="resetApp" class="text-blue-400 text-sm underline mt-4">
@@ -122,7 +122,7 @@ const {
             class="w-full aspect-square max-h-80 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl flex flex-col items-center justify-center space-y-2 active:scale-95 transition-all mx-auto ring-4 ring-green-200"
           >
             <span class="text-6xl">🥘</span>
-            <span class="text-2xl font-bold uppercase tracking-widest">Odbieram</span>
+            <span class="text-2xl font-bold uppercase tracking-widest">Odebrane!</span>
             <span class="text-xs opacity-75">Kliknij gdy dostaniesz jedzenie</span>
           </button>
 
